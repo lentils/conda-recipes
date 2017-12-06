@@ -1,17 +1,17 @@
 package:
   name: httpbin
-  version: "0.4.1"
+  version: "0.6.2"
 
 source:
-  fn: httpbin-0.4.1.tar.gz
-  url: https://files.pythonhosted.org/packages/bd/4e/665a7ac9e0c5c2dcec4646507b1cdf276377307d74ec2bf08ee10332cbc8/httpbin-0.4.1.tar.gz
-  md5: 5560286d2ea477a7c05877dbc300e46d
+  fn: httpbin-0.6.2.tar.gz
+  url: https://pypi.python.org/packages/63/01/5ed5d0d9a15f855fd82a99713a55ddaae70f8344327e4b2c676cba3494ff/httpbin-0.6.2.tar.gz
+  md5: cade8ea5eaed811ef062a18db2b8e9e9
 #  patches:
    # List any patch files here
    # - fix.patch
 
 # build:
-  # noarch_python: True
+  # noarch: python
   # preserve_egg_dir: True
   # entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
@@ -35,6 +35,10 @@ requirements:
     - decorator
     - itsdangerous
     - six
+    - brotlipy
+    - raven[flask]
+    - flask_limiter
+    - flask-common
 
   run:
     - python
@@ -43,6 +47,10 @@ requirements:
     - decorator
     - itsdangerous
     - six
+    - brotlipy
+    - raven[flask]
+    - flask_limiter
+    - flask-common
 
 test:
   # Python imports
@@ -62,9 +70,10 @@ test:
     # - nose
 
 about:
-  home: https://github.com/Runscope/httpbin
+  home: https://github.com/kennethreitz/httpbin
   license: MIT License
   summary: 'HTTP Request and Response Service'
+  license_family: MIT
 
 # See
 # http://docs.continuum.io/conda/build.html for
